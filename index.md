@@ -4,7 +4,7 @@ Welcome to my Computer Science Capstone ePortfolio. This site showcases enhanced
 
 ## Portfolio Sections
 
-- [Code Review](https://youtu.be/342OlEp3XoQ)
+- <a href="https://youtu.be/342OlEp3XoQ" target="_blank" rel="noopener noreferrer">Code Review (YouTube)</a>
 - [Software Design & Engineering](software-design.md)
 - [Algorithms & Data Structures](algorithms.md)
 - [Databases](databases.md)
