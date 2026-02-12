@@ -1,7 +1,7 @@
 # Software Design & Engineering  
 ## Artifact One: Contact Management Application
 
-[See the original and enhanced versions here](ArtifactOne/)
+[See the original and enhanced versions here](https://github.com/jasoncarignanSNHU/jasoncarignanSNHU.github.io/tree/ePortfolio/ArtifactOne)
 
 Contents include:
 - `ArtifactOne_Original.zip` (Java version from CS 320)
