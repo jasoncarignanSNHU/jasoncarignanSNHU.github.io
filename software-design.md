@@ -1,4 +1,6 @@
 # Software Design & Engineering  
+[Home](https://jasoncarignansnhu.github.io/)
+
 ## Artifact One: Contact Management Application
 
 [See the original and enhanced versions here](https://github.com/jasoncarignanSNHU/jasoncarignanSNHU.github.io/tree/ePortfolio/ArtifactOne)
@@ -10,75 +12,94 @@ Contents include:
 
 ---
 
-**Artifact Overview**
+### Artifact Overview
 
-The artifact selected for this enhancement is a Contact Management application originally created in CS 320: Software Testing, Automation, and Quality Assurance as a Java-based project. The original version consisted of a domain model, a service layer, and automated unit tests designed to validate contact information such as names, phone numbers, and addresses. The application did not include a user interface and instead functioned as a validation and service harness capable of supporting a future system requiring reliable contact data handling.
+The artifact selected for this enhancement is a Contact Management application originally developed in **CS 320: Software Testing, Automation, and Quality Assurance**. The original Java-based implementation included a domain model, a service layer, and automated unit tests that validated contact information such as names, phone numbers, and addresses. It functioned as a backend validation system without a user interface.
 
-For CS 499, this artifact was enhanced by fully porting the application from Java to Python, restructuring it into a professional package format, recreating the automated test suite using pytest, and integrating a lightweight Flask web interface that allows users to add and delete contacts through a browser. These enhancements transformed the project from a test-focused backend into a functional, user-facing prototype while preserving the original validation and business rules. As a result, the artifact now reflects a realistic software system rather than a standalone academic exercise, making it well suited for inclusion in my ePortfolio.
+For CS 499, this artifact was selected because it provided a strong opportunity to demonstrate software engineering growth through language migration, structural redesign, and user-facing integration. At a high level, the enhancement improves the system in three meaningful ways: it modernizes the implementation using Python, expands the architecture into a complete web-accessible application, and strengthens validation and defensive programming practices to reflect real-world development standards.
+
+The enhanced version preserves the original validation logic while transforming the project from a test-focused academic exercise into a functional, user-facing prototype.
 
 ---
 
-**Engineering Decisions and Technical Depth**
+### Architectural Redesign and Language Migration
 
-Enhancing this artifact required careful analysis of the original Java code to ensure that all business rules were preserved during the conversion to Python. A specific challenge during this migration involved translating Java’s strongly typed class structure and explicit constructor validation into Python’s more flexible object model. Because Python does not enforce type constraints at compile time, validation logic that was implicitly protected by Java’s typing system had to be made more explicit through runtime checks and controlled object creation patterns. This required redesigning portions of the initialization logic to ensure consistent enforcement of field length constraints and null-handling behavior.
+The first major enhancement involved fully porting the application from Java to Python. This required careful analysis of the original object-oriented structure to ensure that all validation rules and service behaviors were preserved.
 
-Another major challenge was adapting the service layer to support live form input rather than direct object creation. This change required additional validation and error handling to ensure that the system remained stable when exposed to user-driven workflows. Rewriting the test suite using pytest reinforced the importance of generic test data and comprehensive boundary testing, while integrating Flask demonstrated how backend logic must remain robust when paired with a user-facing interface.
+A key challenge during this migration was adapting Java’s strongly typed class design to Python’s more flexible object model. Because Python does not enforce compile-time type checking, validation logic that was implicitly protected in Java had to be explicitly enforced at runtime. Constructor validation, field constraints, and null-handling logic were redesigned to ensure consistent enforcement of:
 
-Additional defensive measures were implemented to ensure:
-- Strict field length enforcement  
+- Required fields  
+- Maximum length constraints  
+- Phone number formatting rules  
+- Controlled object creation  
+
+The project was reorganized into a professional Python package structure with clearly separated modules for domain objects, service logic, and exceptions. This restructuring improved maintainability and readability while aligning with modern Python development conventions.
+
+---
+
+### Testing Strategy and Reliability
+
+The original JUnit test suite was fully recreated using `pytest`, preserving the validation coverage while modernizing the testing framework. The enhanced test suite evaluates:
+
+- Valid contact creation  
+- Invalid field rejection  
+- Boundary condition handling  
 - Duplicate contact ID detection  
-- Controlled exception handling  
-- Prevention of malformed or incomplete input  
+- Update and delete operations  
 
-Flask was intentionally selected as the web framework because it provided a lightweight solution that allowed backend logic to remain cleanly separated from presentation concerns. While more complex frameworks offer scalability features, Flask was the most appropriate choice for demonstrating how a validated service layer can be exposed through a simple interface without introducing architectural complexity. This design trade-off preserved clarity while still demonstrating real-world applicability.
-
----
-
-**Validation and Testing**
-
-The completed application is verified through both automated testing and live execution. The test suite validates correct contact creation, rejection of invalid fields, duplicate ID handling, and update and delete behaviors, and all tests pass successfully.
+All tests pass successfully, and full coverage was verified during development.
 
 ![PyCharm Test Coverage](ArtifactOne/PyCharm%20Test%20Coverage.png)
 
-The image above shows full test coverage in PyCharm, demonstrating that validation logic remains comprehensive and reliable.
+This verification confirms that the migration preserved functional integrity while strengthening reliability.
 
 ---
 
-**User Interface Integration**
+### User Interface Integration
 
-The Flask interface demonstrates how the same validated logic is reused through a browser-based form, confirming that the service layer remains consistent even when accessed through a web application.
+To extend the artifact beyond backend validation, a lightweight Flask interface was introduced. This addition exposes the validated service layer through a browser-based form, allowing users to add and delete contacts interactively.
 
 ![Flask UI](ArtifactOne/Flask%20UI.png)
 
-This interface confirms that backend rules remain stable even when exposed to user-driven workflows, reinforcing the importance of layered system design.
+Flask was intentionally selected because it provides a minimal framework that keeps backend logic cleanly separated from presentation concerns. While larger frameworks offer scalability features, Flask allowed the focus to remain on architectural clarity and service-layer integrity. This design decision demonstrates deliberate tool selection aligned with project scope and maintainability.
+
+Adapting the service layer to accept live form input required additional error handling and input validation safeguards. The system now defensively handles malformed or incomplete user submissions while preserving the original business rules.
 
 ---
 
-**Documentation and Reproducibility**
+### Documentation and Reproducibility
 
 ![Folder and README](ArtifactOne/Folder%20%26%20README.png)
 
-The README included in the enhanced artifact provides setup instructions, dependency documentation, and execution steps so that another developer can download and run the project without ambiguity. This reflects professional communication standards and aligns with industry expectations for collaborative development.
+The enhanced artifact includes a comprehensive README file that provides setup instructions, dependency requirements, and execution steps. This ensures that another developer can clone, install, and run the project without ambiguity.
+
+This emphasis on reproducibility reflects professional communication standards and supports collaborative development environments.
 
 ---
 
-**Alignment With Program Outcomes**
+### Alignment With Program Outcomes
 
-This enhancement demonstrates measurable progress toward all five Computer Science program outcomes:
+This enhancement demonstrates measurable progress toward the Computer Science program outcomes:
 
-1. **Outcome 1: Employ strategies for building collaborative environments that enable diverse audiences to support organizational decision making.** The modular architecture, clear separation of concerns (domain model, service layer, testing suite, and web interface), and structured documentation support collaborative development and allow technical and nontechnical stakeholders to understand system behavior.
+1. **Outcome 1: Employ strategies for building collaborative environments that enable diverse audiences to support organizational decision making.**  
+   The modular architecture, structured package design, documentation, and separation of concerns support maintainability and collaborative review.
 
-2. **Outcome 2: Design, develop, and deliver professional-quality communications adapted to specific audiences and contexts.** The project includes structured packaging, meaningful naming conventions, inline documentation, a comprehensive README file, and a browser-based interface, ensuring clarity for developers and usability for end users.
+2. **Outcome 2: Design, develop, and deliver professional-quality communications adapted to specific audiences and contexts.**  
+   Clear documentation, organized code structure, meaningful naming conventions, and a browser-based interface communicate system behavior effectively to both technical and nontechnical audiences.
 
-3. **Outcome 3: Design and evaluate computing solutions using algorithmic principles and computer science practices.** Strict validation rules, boundary condition testing, duplicate detection logic, and comprehensive automated testing demonstrate systematic evaluation of computing solutions and adherence to algorithmic rigor.
+3. **Outcome 3: Design and evaluate computing solutions using algorithmic principles and computer science practices.**  
+   Consistent validation logic, boundary testing, duplicate detection, and structured service-layer design demonstrate systematic evaluation of computing solutions.
 
-4. **Outcome 4: Use well-founded and innovative techniques, skills, and tools to implement computing solutions that deliver value.** The migration from Java to Python, the use of pytest for automated testing, and the integration of a Flask-based web interface reflect deliberate tool selection aligned with modern industry practices.
+4. **Outcome 4: Use well-founded and innovative techniques, skills, and tools to implement computing solutions that deliver value.**  
+   The migration from Java to Python, integration of `pytest`, and implementation of a Flask-based interface reflect modern tool selection aligned with industry practices.
 
-5. **Outcome 5: Develop a security mindset that anticipates vulnerabilities and mitigates risks.** Defensive programming practices, including controlled object creation, strict input validation, exception handling, and duplicate ID enforcement to reduce system vulnerability and promote data integrity.
-
+5. **Outcome 5: Develop a security mindset that anticipates vulnerabilities and mitigates risks.**  
+   Strict runtime validation, controlled object creation, duplicate prevention, and structured exception handling reduce vulnerability and protect system integrity.
 
 ---
 
-**Reflection**
+### Reflection
 
-Overall, this enhancement strengthened my understanding of software structure, validation, automated testing, and real-world usability. It reinforced how a well-designed service layer can act as a stable foundation for future systems and how existing code can be modernized through thoughtful design and tool selection. By transforming this artifact into a Python-based application with a working interface and full test coverage, I demonstrated how professional software engineering practices can extend the value of an existing system while aligning it with modern development standards.
+Enhancing this artifact required balancing architectural clarity, validation rigor, usability, and maintainability. Migrating from Java to Python strengthened my understanding of language-level differences in type safety and validation enforcement. Integrating Flask demonstrated how backend systems must remain stable when exposed to user-driven workflows.
+
+Overall, this enhancement transformed a validation-focused academic project into a complete, structured application that reflects professional software engineering standards. It demonstrates language migration, modular design, automated testing, user interface integration, and defensive programming in a cohesive system aligned with real-world development practices.
