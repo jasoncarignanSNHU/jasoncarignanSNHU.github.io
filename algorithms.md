@@ -1,4 +1,6 @@
-# Algorithms & Data Structures  
+# Algorithms & Data Structures
+[Home](https://jasoncarignansnhu.github.io/)
+
 ## Artifact Two: Course Planner Application
 
 [See the original and enhanced versions here](https://github.com/jasoncarignanSNHU/jasoncarignanSNHU.github.io/tree/ePortfolio/ArtifactTwo)
@@ -12,11 +14,11 @@ Contents include:
 
 ### Artifact Overview
 
-The artifact selected for this enhancement is a Course Planner application originally developed in CS 300: Data Structures and Algorithms. The original console-based advising tool loaded course records from a CSV file, stored them in a hash table, and allowed users to print either a full course list or a single course with its direct prerequisites. While the implementation satisfied the academic requirements of the course, it relied on sorting the entire course list each time it was printed and did not support advanced prerequisite analysis such as full dependency chains or cycle detection.
+The artifact selected for this enhancement is a Course Planner application originally developed in CS 300: Data Structures and Algorithms. The original console-based tool loaded course records from a CSV file, stored them in a hash table, and allowed users to print either a full course list or a single course with its direct prerequisites. While the implementation satisfied the requirements of the course, it relied on sorting the entire course list each time it was printed and did not support advanced prerequisite analysis such as full dependency chains or cycle detection.
 
-For CS 499, this artifact was selected because it provided a clear opportunity to demonstrate algorithmic improvement, measurable performance gains, and more realistic advising functionality through graph-based modeling. At a high level, the enhancement improves the system in three important ways: it eliminates unnecessary repeated computation, expands prerequisite reasoning using graph traversal, and strengthens defensive safeguards to prevent unstable execution.
+For CS 499, this artifact was selected because it provided a clear opportunity to demonstrate algorithmic improvement, measurable performance gains, and more realistic functionality through graph-based modeling. At a high level, the enhancement improves the system in three important ways: it eliminates unnecessary repeated computation, expands prerequisite reasoning using graph traversal, and strengthens its defensive safeguards to prevent unstable execution.
 
-To meaningfully demonstrate performance differences, the dataset was expanded significantly beyond the small academic file used in CS 300. The updated `ProjectTwo_Enhanced.csv` includes a larger set of courses and prerequisite relationships, allowing improvements to be measured under realistic data volumes.
+To meaningfully demonstrate performance differences, the dataset was expanded significantly beyond the small file used in CS 300. The updated `ProjectTwo_Enhanced.csv` included a larger set of courses and prerequisite relationships, allowing improvements to be measured under more realistic data volumes.
 
 ---
 
@@ -26,7 +28,7 @@ The first major enhancement eliminates repeated sorting by maintaining an always
 
 This design intentionally trades a small amount of additional memory and insertion overhead during load time for significantly improved runtime during repeated schedule printing. Because schedule printing is a common user action, this trade-off improves real-world usability while preserving fast lookup through `unordered_map`.
 
-During benchmarking, console output was removed because it masked algorithmic differences. Instead, both the legacy and enhanced paths performed equivalent internal work so that timing results reflected structural improvements rather than I/O cost. With the expanded dataset and repeated schedule operations, the enhanced implementation completed the workload approximately **9.5 times faster** than the original version.
+During benchmarking, console output was removed because it masked algorithmic differences. Instead, both the legacy and enhanced paths performed equivalent internal work so that timing results reflected structural improvements rather than display times. With the expanded dataset and repeated schedule operations, the enhanced implementation completed the workload approximately **9.5 times faster** on average than the original version.
 
 ![Performance Results](ArtifactTwo/PerformanceResults.png)
 
@@ -40,9 +42,9 @@ The second major enhancement introduces a prerequisite graph represented as an a
 
 A depth-first search (DFS) algorithm expands full prerequisite chains, and memoization is used to cache results so repeated expansions do not recompute the same paths. This improvement allows the system to display the entire sequence of required courses, which better reflects how real advising systems operate.
 
-The DFS implementation also includes recursion stack tracking to detect circular dependencies. If the dataset contains a prerequisite cycle, the program reports an error rather than recursing indefinitely. This safeguards correctness and prevents unstable execution.
+The DFS implementation also includes recursion stack tracking to detect circular dependencies. If the dataset contains a prerequisite cycle, the program reports an error rather than recursing indefinitely. This safeguards against any unstable executions.
 
-One implementation challenge involved ensuring that recursive traversal did not recompute shared prerequisite paths unnecessarily. Initial testing revealed redundant evaluations in deeper chains. Introducing memoization resolved this issue and reinforced the importance of caching in recursive graph algorithms.
+One challenge during implementation was preventing the program from repeatedly recalculating the same prerequisite chains. Early testing showed that longer sequences were being evaluated more than once. By storing and reusing previously calculated results, the program became more efficient and avoided unnecessary repeated work.
 
 ![Menu Demonstration](ArtifactTwo/MenuDemo.png)
 
