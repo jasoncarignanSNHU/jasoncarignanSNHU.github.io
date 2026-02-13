@@ -18,7 +18,7 @@ The artifact selected for this enhancement is a Course Planner application origi
 
 For CS 499, this artifact was selected because it provided a clear opportunity to demonstrate algorithmic improvement, measurable performance gains, and more realistic functionality through graph-based modeling. At a high level, the enhancement improves the system in three important ways: it eliminates unnecessary repeated computation, expands prerequisite reasoning using graph traversal, and strengthens its defensive safeguards to prevent unstable execution.
 
-To meaningfully demonstrate performance differences, the dataset was expanded significantly beyond the small file used in CS 300. The updated `ProjectTwo_Enhanced.csv` included a larger set of courses and prerequisite relationships, allowing improvements to be measured under more realistic data volumes.
+To meaningfully demonstrate performance differences, the dataset was expanded significantly beyond the small file used in CS 300. The updated `ProjectTwo_Enhanced.csv` included a larger set of courses and prerequisite relationships, allowing performance improvements to be measured under more realistic data volumes.
 
 ---
 
@@ -26,7 +26,7 @@ To meaningfully demonstrate performance differences, the dataset was expanded si
 
 The first major enhancement eliminates repeated sorting by maintaining an always-sorted index of course IDs using `std::set`. In the original design, printing the schedule required rebuilding and sorting a list of IDs each time the option was selected. By maintaining sorted order during insertion, this repeated work was removed entirely.
 
-This design intentionally trades a small amount of additional memory and insertion overhead during load time for significantly improved runtime during repeated schedule printing. Because schedule printing is a common user action, this trade-off improves real-world usability while preserving fast lookup through `unordered_map`.
+This design intentionally trades a small amount of additional memory and insertion overhead during load time for significantly improved runtime during repeated schedule printing operations. Because schedule printing is a common user action, this trade-off improves real-world usability while preserving fast lookup through `unordered_map`.
 
 During benchmarking, console output was removed because it masked algorithmic differences. Instead, both the legacy and enhanced paths performed equivalent internal work so that timing results reflected structural improvements rather than display times. With the expanded dataset and repeated schedule operations, the enhanced implementation completed the workload approximately **9.5 times faster** on average than the original version.
 
@@ -42,7 +42,7 @@ The second major enhancement introduces a prerequisite graph represented as an a
 
 A depth-first search (DFS) algorithm expands full prerequisite chains, and memoization is used to cache results so repeated expansions do not recompute the same paths. This improvement allows the system to display the entire sequence of required courses, which better reflects how real advising systems operate.
 
-The DFS implementation also includes recursion stack tracking to detect circular dependencies. If the dataset contains a prerequisite cycle, the program reports an error rather than recursing indefinitely. This safeguards against any unstable executions.
+The DFS implementation also includes recursion stack tracking to detect circular dependencies. If the dataset contains a prerequisite cycle, the program reports an error rather than recursing indefinitely. This safeguards against unstable execution caused by malformed prerequisite data.
 
 One challenge during implementation was preventing the program from repeatedly recalculating the same prerequisite chains. Early testing showed that longer sequences were being evaluated more than once. By storing and reusing previously calculated results, the program became more efficient and avoided unnecessary repeated work.
 
@@ -75,6 +75,6 @@ This enhancement demonstrates measurable progress toward the Computer Science pr
 
 ### Reflection
 
-Enhancing this artifact required balancing efficiency, realism, memory usage, and maintainability. The decision to retain `unordered_map` for constant-time lookup while layering `std::set` for ordered iteration reflects thoughtful trade-off management. Expanding the system into a graph-based model increased algorithmic complexity while preserving the original user experience.
+Enhancing this artifact required balancing efficiency, realism, memory usage, and maintainability. The decision to retain `unordered_map` for constant-time lookup while layering `std::set` for ordered iteration reflects thoughtful trade-off management. Expanding the system into a graph-based model increased algorithmic complexity while preserving the original user experience. Implementing and benchmarking these improvements reinforced the importance of evaluating trade-offs between performance, memory usage, and maintainability in real-world systems.
 
 Overall, this enhancement strengthened the artifact by making it more scalable, more efficient under repeated use, and more resilient to imperfect input data. It demonstrates measurable performance improvement, expanded algorithmic depth, and disciplined evaluation of design trade-offs consistent with professional software engineering standards.
