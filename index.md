@@ -1,4 +1,3 @@
-
 - <a href="https://youtu.be/342OlEp3XoQ" target="_blank" rel="noopener noreferrer">Code Review (YouTube)</a>
 - [Software Design & Engineering](https://jasoncarignansnhu.github.io/software-design.html)
 - [Algorithms & Data Structures](https://jasoncarignansnhu.github.io/algorithms.html)
