@@ -1,16 +1,3 @@
-# Jason Carignan
-## CS 499 - Computer Science Capstone
-## Sothern New Hampshire University
-
-
-## Introduction
-
-Completing the Computer Science program has strengthened my ability to design, evaluate, and communicate computing solutions at a professional level. Throughout the program, I progressed from writing functional academic assignments to engineering scalable, performance-aware, and secure systems aligned with real-world industry standards. The enhancements included in this portfolio demonstrate measurable growth across software engineering, algorithms and data structures, and database systems, while also highlighting my ability to clearly communicate technical decisions to diverse audiences. These foundations are critical not only for traditional software development roles, but also for advanced fields such as artificial intelligence and machine learning, where efficiency, data integrity, and algorithmic rigor directly impact model performance and system reliability.
-
-As a professional working in the financial services sector, I approach software development with a focus on security, reliability, performance, and data quality. My long-term professional goal is to transition into an AI and machine learning–focused role, particularly in areas such as intelligent analytics, predictive modeling, and decision-support systems. The artifacts in this portfolio reflect both my academic growth and my preparation for that direction, demonstrating structured problem solving, scalable data design, performance optimization, and disciplined evaluation of trade-offs. These competencies form the technical backbone required for building responsible, production-grade AI-driven systems.
-
----
-
 ## Portfolio Navigation
 
 - <a href="https://youtu.be/342OlEp3XoQ" target="_blank" rel="noopener noreferrer">Code Review (YouTube)</a>
@@ -20,6 +7,13 @@ As a professional working in the financial services sector, I approach software 
 
 ---
 
+## Introduction
+
+Completing the Computer Science program has strengthened my ability to design, evaluate, and communicate computing solutions at a professional level. Throughout the program, I progressed from writing functional academic assignments to engineering scalable, performance-aware, and secure systems aligned with real-world industry standards. The enhancements included in this portfolio demonstrate measurable growth across software engineering, algorithms and data structures, and database systems, while also highlighting my ability to clearly communicate technical decisions to diverse audiences. These foundations are critical not only for traditional software development roles, but also for advanced fields such as artificial intelligence and machine learning, where efficiency, data integrity, and algorithmic rigor directly impact model performance and system reliability.
+
+As a professional working in the financial services sector, I approach software development with a focus on security, reliability, performance, and data quality. My long-term professional goal is to transition into an AI and machine learning–focused role, particularly in areas such as intelligent analytics, predictive modeling, and decision-support systems. The artifacts in this portfolio reflect both my academic growth and my preparation for that direction, demonstrating structured problem solving, scalable data design, performance optimization, and disciplined evaluation of trade-offs. These competencies form the technical backbone required for building responsible, production-grade AI-driven systems.
+
+---
 
 ## Collaboration and Communication
 
