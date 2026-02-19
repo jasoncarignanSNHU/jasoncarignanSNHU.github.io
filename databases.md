@@ -1,4 +1,3 @@
-# Databases  
 [Home](https://jasoncarignansnhu.github.io/)
 
 ## Artifact Three: RMA Analytics Database Enhancement
