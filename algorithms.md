@@ -1,4 +1,3 @@
-# Algorithms & Data Structures
 [Home](https://jasoncarignansnhu.github.io/)
 
 ## Artifact Two: Course Planner Application
