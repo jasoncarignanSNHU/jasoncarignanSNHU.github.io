@@ -1,6 +1,7 @@
 # Jason Carignan  
-# CS 499 – Computer Science Capstone  
-# Southern New Hampshire University  
+## Professional Self-Assessment  
+CS 499 – Computer Science Capstone  
+Southern New Hampshire University 
 
 ---
 
