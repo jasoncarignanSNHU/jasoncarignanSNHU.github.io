@@ -1,4 +1,3 @@
-# Software Design & Engineering  
 [Home](https://jasoncarignansnhu.github.io/)
 
 ## Artifact One: Contact Management Application
